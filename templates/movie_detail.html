@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="card">
+  <h2>{{ movie.title }}</h2>
+  <p><strong>Year:</strong> {{ movie.release_year }}</p>
+  <p><strong>Genre:</strong> {{ movie.genre }}</p>
+  <p><strong>Rating:</strong> {{ movie.rating }}</p>
+</article>
+
+<section class="card">
+  <h3>Actors</h3>
+  {% if actors %}
+  <ul>
+    {% for a in actors %}
+      <li>{{ a.name }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No actors recorded.</p>
+  {% endif %}
+</section>
+{% endblock %}
